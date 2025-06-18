@@ -1,4 +1,4 @@
-const db = require('../config/db');
+const db = require('../config/db').promise();
 
 exports.addSchool = (req, res) => {
   const { name, address, latitude, longitude } = req.body;
