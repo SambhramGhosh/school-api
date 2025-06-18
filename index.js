@@ -7,7 +7,10 @@ dotenv.config();
 const schoolRoutes = require('./routes/schoolRoutes');
 
 app.use(express.json());
-app.use('/', schoolRoutes);
+
+app.get('/', (req, res) => {
+  res.send('✅ School API is running!');
+});
 
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
